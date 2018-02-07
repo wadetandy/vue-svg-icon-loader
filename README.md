@@ -4,6 +4,14 @@ This is the Vuejs SVG Icon loader for webpack.
 
 ## Getting Started
 
+### Caveats
+
+This is currently a very simple loader that has only been designed to work in tandem
+with the [`svg-sprite-loader`](https://github.com/kisenka/svg-sprite-loader) project. 
+It should be fairly straighforward to make this work with other SVG loader patterns, but
+it will probably not do that out of the box. I'm glad to work with anyone to improve the
+number of use cases this works for!
+
 ### Examples 
 
 There is a sample Vue + Webpack project in the `examples/` directory that shows
