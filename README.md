@@ -1,20 +1,39 @@
 # Vue SVG Icon Loader for webpack
 
-This is the Vuejs SVG Icon loader for webpack.
+This is a webpack loader that turns SVG icons directly importable vuejs components.
+You can import these and use them directly in your Vue applications:
 
-## Getting Started
+```vue
+<template>
+  <div>
+    <my-icon width='1.5em' height='1.5em'/>
+  </div>
+</template>
 
-### Basic Usage
+<script>
+import MyIcon from './my-icon.svg'
 
+export default {
+  components: {
+    MyIcon
+  },
+}
+</script>
+```
 
+SVG attributes can be overridden with CSS or inline on the icon element in your template.
+See the [example project](./examples/svg-sprite-loader/src/components/IconsDemo.vue) for
+more usage examples.
 
 ### Caveats
 
-This is currently a very simple loader that has only been designed to work in tandem
+This is currently a  simple loader that has only been designed to work in tandem
 with the [`svg-sprite-loader`](https://github.com/kisenka/svg-sprite-loader) project. 
 It should be fairly straighforward to make this work with other SVG loader patterns, but
 it will probably not do that out of the box. I'm glad to work with anyone to improve the
 number of use cases this works for!
+
+## Getting Started
 
 ### Examples 
 
@@ -49,7 +68,7 @@ npm install vue-svg-icon-loader
           { 
             test: /\.svg$/,
             use: [
-              'vue-svg-sprite-loader', 
+              'vue-svg-icon-loader', 
               'svg-sprite-loader'
             ]
           }

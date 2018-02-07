@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <h1>Icon Loader Demo</h1>
+
+    <icons-demo/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import IconsDemo from './components/IconsDemo'
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    IconsDemo
   }
 }
 </script>
