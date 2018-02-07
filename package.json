@@ -1,0 +1,43 @@
+{
+  "name": "vue-svg-icon-loader",
+  "version": "1.0.0",
+  "description": "Turn SVG files into Vuejs Icon Components",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc --version && tsc --project .",
+    "build:watch": "yarn build --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wadetandy/vue-svg-icon-loader.git"
+  },
+  "keywords": [
+    "webpack",
+    "loader",
+    "svg",
+    "svg-sprites",
+    "icons",
+    "vue"
+  ],
+  "engines": {
+    "node": ">= 6.0"
+  },
+  "author": "Wade Tandy <wade.tandy@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wadetandy/vue-svg-icon-loader/issues"
+  },
+  "homepage": "https://github.com/wadetandy/vue-svg-icon-loader/",
+  "dependencies": {
+    "loader-utils": "1.1.0"
+  },
+  "peerDependencies": {
+    "vue": ">= 2.0"
+  },
+  "devDependencies": {
+    "@types/webpack": "3.8.5",
+    "@types/loader-utils": "1.1.1",
+    "typescript": "^2.7.1",
+    "webpack": "^3.6.0"
+  }
+}
