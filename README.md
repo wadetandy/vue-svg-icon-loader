@@ -1,6 +1,6 @@
 # Vue SVG Icon Loader for webpack
 
-This is a webpack loader that turns SVG icons directly importable vuejs components.
+This is a webpack loader that turns SVG icons into directly-importable vuejs components.
 You can import these and use them directly in your Vue applications:
 
 ```vue
