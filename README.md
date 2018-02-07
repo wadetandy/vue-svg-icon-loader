@@ -79,7 +79,7 @@ npm install vue-svg-icon-loader
 
 ## Contributing
 
-We want you to help make this even better. Please feel free to contribute; if you have any
+I want you to help make this even better. Please feel free to contribute; if you have any
 problems or feature suggestions, please open an issue on Github.
 
 ## License
