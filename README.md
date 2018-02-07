@@ -4,6 +4,10 @@ This is the Vuejs SVG Icon loader for webpack.
 
 ## Getting Started
 
+### Basic Usage
+
+
+
 ### Caveats
 
 This is currently a very simple loader that has only been designed to work in tandem

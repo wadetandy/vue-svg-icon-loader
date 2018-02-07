@@ -1,9 +1,9 @@
-*.ts
-.vscode
-.test
-examples
-test
-src
+.vscode/
+examples/
+node_modules/
+src/
+test/
 yarn.lock
 *.log
-node_modules/
+*.ts
+.test
