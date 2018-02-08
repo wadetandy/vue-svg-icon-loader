@@ -13,6 +13,7 @@ yarn.lock
 !/test/**/expectedOutput-*/**
 /**/node_modules
 /**/dist
+lib/
 /**/.happypack
 /**/.cache-loader
 !build.js
