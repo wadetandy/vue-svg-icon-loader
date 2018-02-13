@@ -11,7 +11,6 @@ interface IDimensions {
 }
 
 export const Icon = function(svg : ISvg, defaultScale : number | undefined) {
-  console.log(svg, defaultScale)
   return Vue.extend({
     props: {
       scale: {
@@ -26,9 +25,9 @@ export const Icon = function(svg : ISvg, defaultScale : number | undefined) {
       }
     },
     computed: {
-      dimension() : IDimensions | undefined {
+      dimension() : IDimensions | {} {
         if (!this.scale) {
-          return undefined
+          return {}
         }
 
         let splits = this.glyph.viewBox.split(" ")
@@ -46,9 +45,7 @@ export const Icon = function(svg : ISvg, defaultScale : number | undefined) {
         fill: 'currentColor',
       }
 
-      if (this.dimension) {
-        Object.assign(svgAttrs, this.dimension)
-      }
+      Object.assign(svgAttrs, this.dimension)
 
       return h(
         'svg', 

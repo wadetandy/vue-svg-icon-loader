@@ -16,8 +16,6 @@ loader.pitch = function(this: webpack.loader.LoaderContext, remainingRequest : s
   const requireString = stringifyRequest(this, "!!" + remainingRequest)
   const builderPath = resolve(__dirname, './icon-builder')
 
-  console.log(options)
-
   return `
     const svg = require(${requireString}).default
     const { Icon } = require('${builderPath}')
