@@ -28,14 +28,14 @@ more usage examples.
 ### Caveats
 
 This is currently a  simple loader that has only been designed to work in tandem
-with the [`svg-sprite-loader`](https://github.com/kisenka/svg-sprite-loader) project. 
+with the [`svg-sprite-loader`](https://github.com/kisenka/svg-sprite-loader) project.
 It should be fairly straighforward to make this work with other SVG loader patterns, but
 it will probably not do that out of the box. I'm glad to work with anyone to improve the
 number of use cases this works for!
 
 ## Getting Started
 
-### Examples 
+### Examples
 
 There is a sample Vue + Webpack project in the `examples/` directory that shows
 how to use this in an application.
@@ -65,10 +65,10 @@ Create or update `webpack.config.js` like so:
     module: {
       rules: [
         // ... other configured loaders
-        { 
+        {
           test: /\.svg$/,
           use: [
-            'vue-svg-icon-loader', 
+            'vue-svg-icon-loader',
             'svg-sprite-loader'
           ],
         }
@@ -100,8 +100,26 @@ You an also provide options to the loader:
 
 `default = undefined`
 
-Setting this to an integer will multiply the SVG `viewBox` dimensions by this number in 
+Setting this to an integer will multiply the SVG `viewBox` dimensions by this number in
 each component.  This can be overridden per component instnace by passing a `scale` prop.
+
+### Typescript
+
+Importing svg files as Vue components in typescript requires one additional setup step.
+You will need to provide a type definition for `.svg` files so that typescript knows to treat
+them as a vue component.  If you haven't done this, you'll see typescript reporting
+"module not found" errors.  Create a `svg.d.ts` file wherever you store external type
+defintions, and add the following content:
+
+```typescript
+declare module "*.svg" {
+  import Vue from 'vue'
+  export default Vue
+}
+```
+
+*Note*: If anyone knows a way for this loader to provide this for projects automatically,
+please open an issue and let me know!
 
 ## Contributing
 
