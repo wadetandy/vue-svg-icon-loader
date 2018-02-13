@@ -54,28 +54,54 @@ npm install vue-svg-icon-loader
 
 ### Configuration
 
-1. Create or update `webpack.config.js` like so:
+Create or update `webpack.config.js` like so:
 
-    ```javascript
-    module.exports = {
-      entry: './app.js',
-      output: {
-        filename: 'bundle.js'
-      },
-      module: {
-        rules: [
-          // ... other configured loaders
-          { 
-            test: /\.svg$/,
-            use: [
-              'vue-svg-icon-loader', 
-              'svg-sprite-loader'
-            ]
-          }
-        ]
+``` javascript
+  module.exports = {
+    entry: './app.js',
+    output: {
+      filename: 'bundle.js'
+    },
+    module: {
+      rules: [
+        // ... other configured loaders
+        { 
+          test: /\.svg$/,
+          use: [
+            'vue-svg-icon-loader', 
+            'svg-sprite-loader'
+          ],
+        }
+      ]
+    }
+  }
+```
+
+#### Options
+
+You an also provide options to the loader:
+
+``` javascript
+{
+  test: /\.svg$/,
+  use: [
+    {
+      loader: 'vue-svg-icon-loader',
+      options: {
+        defaultScale: number | undefined
       }
     }
-    ```
+    'svg-sprite-loader'
+  ]
+}
+```
+
+##### `defaultScale`
+
+`default = undefined`
+
+Setting this to an integer will multiply the SVG `viewBox` dimensions by this number in 
+each component.  This can be overridden per component instnace by passing a `scale` prop.
 
 ## Contributing
 

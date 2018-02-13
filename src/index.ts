@@ -1,53 +1,28 @@
 import * as webpack from 'webpack'
 import { getOptions, stringifyRequest } from 'loader-utils'
+import { resolve } from 'path'
+
+interface IOptions {
+  defaultScale?: number
+}
 
 const loader : webpack.loader.Loader = function(contents : string | Buffer) {
-  const options = getOptions(this)
+  const options : IOptions = getOptions(this)
 }
 
 loader.pitch = function(this: webpack.loader.LoaderContext, remainingRequest : string) {
+  const options : IOptions = getOptions(this) || {}
+  const { defaultScale } = options
   const requireString = stringifyRequest(this, "!!" + remainingRequest)
+  const builderPath = resolve(__dirname, './icon-builder')
+
+  console.log(options)
 
   return `
-    const Icon = require(${requireString}).default
+    const svg = require(${requireString}).default
+    const { Icon } = require('${builderPath}')
 
-    export default {
-      name: 'TestIcon',
-      props: {
-        scale: {
-        type: Number,
-          default: 1
-        }
-      },
-      data() {
-        return {
-          glyph: Icon
-        }
-      },
-      render: function(h) {
-        return h(
-          'svg', { 
-            attrs: {
-              'aria-hidden': 'true',
-              fill: 'currentColor',
-              height: this.dimension,
-              width: this.dimension,
-            },
-          }, [
-            h('use', {
-              attrs: {
-                'xlink:href': "#" + this.glyph.id
-              }
-            }, [])
-          ]
-        ) 
-      },
-      computed: {
-        dimension() {
-          return parseInt(this.glyph.viewBox.split(" ")[2]) * Math.floor(this.scale)
-        }
-      }
-    }
+    export default Icon(svg, ${defaultScale + ''})
   `
 }
 
