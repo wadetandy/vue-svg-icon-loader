@@ -1,4 +1,4 @@
-import { CreateElement } from 'vue'
+import Vue, { CreateElement } from 'vue'
 
 interface ISvg {
   id: string,
@@ -10,10 +10,11 @@ interface IDimensions {
   width: number,
 }
 
-interface IComponent {
+interface IComponent extends Vue {
   scale: number | undefined
   glyph: ISvg
   dimension: IDimensions
+  onClick: Function
 }
 
 export const Icon = function(svg : ISvg, defaultScale : number | undefined) {
@@ -45,6 +46,11 @@ export const Icon = function(svg : ISvg, defaultScale : number | undefined) {
         }
       }
     },
+    methods: {
+      onClick(this: IComponent, event : Event) {
+        console.log('click')
+      }
+    },
     render(this: IComponent, h: CreateElement) {
       let svgAttrs : Record<string, number | string> = {
         'aria-hidden': 'true',
@@ -57,6 +63,11 @@ export const Icon = function(svg : ISvg, defaultScale : number | undefined) {
         'svg', 
         { 
           attrs: svgAttrs,
+          on: {
+            click: (event : Event) => {
+              this.$emit('click', event)
+            }
+          }
         }, [
         h(
           'use', 
