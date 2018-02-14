@@ -98,7 +98,7 @@ You an also provide options to the loader:
 
 ##### `defaultScale`
 
-`default = undefined`
+`default = 1`
 
 Setting this to an integer will multiply the SVG `viewBox` dimensions by this number in
 each component.  This can be overridden per component instnace by passing a `scale` prop.
