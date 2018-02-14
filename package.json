@@ -1,11 +1,12 @@
 {
   "name": "vue-svg-icon-loader",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Turn SVG files into Vuejs Icon Components",
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc --version && tsc --project .",
-    "build:watch": "yarn build --watch"
+    "build:watch": "yarn build --watch",
+    "prepublish": "yarn build"
   },
   "repository": {
     "type": "git",
