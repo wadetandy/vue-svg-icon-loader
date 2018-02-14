@@ -14,7 +14,6 @@ interface IComponent extends Vue {
   scale: number | undefined
   glyph: ISvg
   dimension: IDimensions
-  onClick: Function
 }
 
 export const Icon = function(svg : ISvg, defaultScale : number | undefined) {
@@ -41,14 +40,9 @@ export const Icon = function(svg : ISvg, defaultScale : number | undefined) {
         let scale = Math.floor(this.scale)
 
         return {
-          height: parseInt(splits[2]) * scale,
-          width: parseInt(splits[3]) * scale,
+          width: parseInt(splits[2]) * scale,
+          height: parseInt(splits[3]) * scale,
         }
-      }
-    },
-    methods: {
-      onClick(this: IComponent, event : Event) {
-        console.log('click')
       }
     },
     render(this: IComponent, h: CreateElement) {
