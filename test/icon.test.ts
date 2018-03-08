@@ -60,4 +60,21 @@ describe('Vue SVG Icons', () => {
       expect(wrapper.attributes().height).to.eq('96')
     })
   })
+
+  describe('Slots', () => {
+    it('Allows injecting additional content', () => {
+      let wrapper = shallow(component, {
+        slots: {
+          default: `
+            <linearGradient id="myGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+              <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+            </linearGradient>
+          `
+        }
+      })
+
+      expect(wrapper.find('#myGradient').html()).to.exist
+    })
+  })
 })

@@ -63,6 +63,7 @@ export const Icon = function(svg : ISvg, defaultScale? : number | undefined) {
             }
           }
         }, [
+        this.$slots.default,
         h(
           'use', 
           {
