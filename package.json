@@ -6,7 +6,9 @@
   "scripts": {
     "build": "tsc --version && tsc --project .",
     "build:watch": "yarn build --watch",
-    "prepublish": "yarn build"
+    "prepublish": "yarn build",
+    "test": "NODE_ENV=test mocha --opts test/mocha.opts",
+    "test:watch": "yarn run test --watch"
   },
   "repository": {
     "type": "git",
@@ -36,10 +38,19 @@
     "vue": ">= 2.0"
   },
   "devDependencies": {
+    "@types/chai": "4.1.2",
     "@types/loader-utils": "1.1.1",
+    "@types/mocha": "2.2.48",
     "@types/webpack": "3.8.5",
+    "@vue/test-utils": "1.0.0-beta.12",
+    "chai": "4.1.2",
+    "jsdom": "11.6.2",
+    "jsdom-global": "3.0.2",
+    "mocha": "5.0.4",
+    "ts-node": "5.0.1",
     "typescript": "^2.7.1",
     "vue": "2.5.13",
+    "vue-template-compiler": "2.5.13",
     "webpack": "^3.6.0"
   }
 }

@@ -1,6 +1,6 @@
 import Vue, { CreateElement } from 'vue'
 
-interface ISvg {
+export interface ISvg {
   id: string,
   viewBox: string,
 }
@@ -16,7 +16,7 @@ interface IComponent extends Vue {
   dimension: IDimensions
 }
 
-export const Icon = function(svg : ISvg, defaultScale : number | undefined) {
+export const Icon = function(svg : ISvg, defaultScale? : number | undefined) {
   return {
     props: {
       scale: {
@@ -67,7 +67,8 @@ export const Icon = function(svg : ISvg, defaultScale : number | undefined) {
           'use', 
           {
             attrs: {
-              'xlink:href': "#" + this.glyph.id
+              'xlink:href': "#" + this.glyph.id,
+              'href': "#" + this.glyph.id
             }
           }, 
           []
