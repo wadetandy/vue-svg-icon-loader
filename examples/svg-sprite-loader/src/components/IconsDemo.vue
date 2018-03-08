@@ -20,6 +20,15 @@
         <clipboard-icon :width='`calc(1em * ${size})`' :height='`calc(1em * ${size})`'/>
       </div>
     </div>
+    <h2>Gradients</h2>
+    <div>
+      <clipboard-icon fill='url(#grad1)'>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+          <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+        </linearGradient>
+      </clipboard-icon>
+    </div>
   </div>
 </template>
 

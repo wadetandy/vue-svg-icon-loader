@@ -61,6 +61,28 @@ describe('Vue SVG Icons', () => {
     })
   })
 
+  describe('fill', () => {
+    beforeEach(() => {
+      component = Icon(stubSvg, 2)
+    })
+
+    it('has a default fill', () => {
+      let wrapper = shallow(component)
+
+      expect(wrapper.attributes().fill).to.eq('currentColor')
+    })
+
+    it('allows fill override', () => {
+      let wrapper = shallow(component, {
+        propsData: {
+          'fill': 'foobarbaz'
+        }
+      })
+
+      expect(wrapper.attributes().fill).to.eq('foobarbaz')
+    })
+  })
+
   describe('Slots', () => {
     it('Allows injecting additional content', () => {
       let wrapper = shallow(component, {

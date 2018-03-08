@@ -12,6 +12,7 @@ interface IDimensions {
 
 interface IComponent extends Vue {
   scale: number | undefined
+  fill: string
   glyph: ISvg
   dimension: IDimensions
 }
@@ -22,6 +23,11 @@ export const Icon = function(svg : ISvg, defaultScale? : number | undefined) {
       scale: {
         type: Number,
         default: defaultScale,
+        required: false,
+      },
+      fill: {
+        type: String,
+        default: 'currentColor',
         required: false,
       }
     },
@@ -48,7 +54,7 @@ export const Icon = function(svg : ISvg, defaultScale? : number | undefined) {
     render(this: IComponent, h: CreateElement) {
       let svgAttrs : Record<string, number | string> = {
         'aria-hidden': 'true',
-        fill: 'currentColor',
+        fill: this.fill,
       }
 
       Object.assign(svgAttrs, this.dimension)
