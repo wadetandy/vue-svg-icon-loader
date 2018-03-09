@@ -1,5 +1,5 @@
 import { shallow } from '@vue/test-utils'
-import { Icon } from '../src/icon-builder'
+import { buildIconComponent } from '../src/icon-builder'
 import { expect } from 'chai'
 
 import stubSvg from './svg-stub'
@@ -9,7 +9,7 @@ describe('Vue SVG Icons', () => {
 
   describe('default behavior', () => {
     beforeEach(() => {
-      component = Icon(stubSvg)
+      component = buildIconComponent(stubSvg)
     })
 
     it('links to the SVG sprite', () => {
@@ -39,7 +39,7 @@ describe('Vue SVG Icons', () => {
 
   describe('Scaling factor specified in loader options', () => {
     beforeEach(() => {
-      component = Icon(stubSvg, 2)
+      component = buildIconComponent(stubSvg, 2)
     })
 
     it('Adds a scaling factor to the SVG', () => {
@@ -63,7 +63,7 @@ describe('Vue SVG Icons', () => {
 
   describe('fill', () => {
     beforeEach(() => {
-      component = Icon(stubSvg, 2)
+      component = buildIconComponent(stubSvg, 2)
     })
 
     it('has a default fill', () => {

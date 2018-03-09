@@ -18,9 +18,9 @@ loader.pitch = function(this: webpack.loader.LoaderContext, remainingRequest : s
 
   return `
     const svg = require(${requireString}).default
-    const { Icon } = require('${builderPath}')
+    const buildIconComponent = require('${builderPath}').buildIconComponent
 
-    export default Icon(svg, ${defaultScale + ''})
+    export default buildIconComponent(svg, ${defaultScale + ''})
   `
 }
 

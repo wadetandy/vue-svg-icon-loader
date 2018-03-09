@@ -17,7 +17,7 @@ interface IComponent extends Vue {
   dimension: IDimensions
 }
 
-export const Icon = function(svg : ISvg, defaultScale? : number | undefined) {
+export const buildIconComponent = function(svg : ISvg, defaultScale? : number | undefined) {
   return {
     props: {
       scale: {
