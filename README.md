@@ -22,16 +22,18 @@ export default {
 ```
 
 SVG attributes can be overridden with CSS or inline on the icon element in your template.
-See the [example project](./examples/svg-sprite-loader/src/components/IconsDemo.vue) for
+See the [example project](./examples/basic/src/components/IconsDemo.vue) for
 more usage examples.
 
 ### Caveats
 
-This is currently a  simple loader that has only been designed to work in tandem
-with the [`svg-sprite-loader`](https://github.com/kisenka/svg-sprite-loader) project.
-It should be fairly straighforward to make this work with other SVG loader patterns, but
-it will probably not do that out of the box. I'm glad to work with anyone to improve the
-number of use cases this works for!
+While the 1.x version of this project was originally designed to work with
+[`svg-sprite-loader`](https://github.com/kisenka/svg-sprite-loader), this was no longer
+necessary for my use-case and I found the loader only added complexity without offering
+a lot of benefit. If down the line other users want to take advantage of the sprite loader
+then I'm glad to add that back in as a possible configuration option, but it didn't make
+sense to support without knowing people were using it.  The 1.x branch should still work
+for you, however
 
 ## Getting Started
 
@@ -69,7 +71,6 @@ Create or update `webpack.config.js` like so:
           test: /\.svg$/,
           use: [
             'vue-svg-icon-loader',
-            'svg-sprite-loader'
           ],
         }
       ]
@@ -91,7 +92,6 @@ You an also provide options to the loader:
         defaultScale: number | undefined
       }
     }
-    'svg-sprite-loader'
   ]
 }
 ```
