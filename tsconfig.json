@@ -3,15 +3,16 @@
     "target": "es5",
     "strict": true,
     "lib": [
-      "es5", 
-      "es2015.core", 
+      "es5",
+      "es2015.core",
       "dom"
     ],
     "module": "commonjs",
     "moduleResolution": "node",
     "outDir": "lib/"
-  }, 
+  },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "types/**/*.d.ts"
   ]
 }
