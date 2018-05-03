@@ -67,12 +67,11 @@ module.exports = {
         test: /\.svg$/,
         use: [
           {
-            loader: 'vue-svg-icon-loader', 
+            loader: 'vue-svg-icon-loader',
             options: {
               defaultScale: 1,
             }
           },
-          'svg-sprite-loader'
         ]
       }
     ]
