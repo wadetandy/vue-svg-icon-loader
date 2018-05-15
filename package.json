@@ -8,9 +8,7 @@
     "prebuild": "yarn run clean",
     "build": "tsc --version && tsc --project .",
     "build:watch": "yarn build --watch",
-    "prepublish": "yarn build",
-    "test": "NODE_ENV=test mocha --opts test/mocha.opts",
-    "test:watch": "yarn run test --watch"
+    "prepublish": "yarn build"
   },
   "repository": {
     "type": "git",
