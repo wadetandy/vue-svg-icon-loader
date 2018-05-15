@@ -29,6 +29,10 @@
         </linearGradient>
       </clipboard-icon>
     </div>
+    <h2>Scaling</h2>
+    <div>
+      <clipboard-icon :scale="0.5"/>
+    </div>
   </div>
 </template>
 

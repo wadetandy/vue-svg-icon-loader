@@ -45,14 +45,16 @@ how to use this in an application.
 ### Installation
 
 ```
-yarn add vue-svg-icon-loader
+yarn add -D vue-svg-icon-loader
 ```
 
 or
 
 ```
-npm install vue-svg-icon-loader
+npm install --save-dev vue-svg-icon-loader
 ```
+
+You will also need to add a runtime dependency on `vue-svg-component-runtime`: `yarn add vue-svg-component-runtime`
 
 ### Configuration
 
