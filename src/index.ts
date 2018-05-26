@@ -8,7 +8,7 @@ interface IOptions {
 }
 
 const loader : loader.Loader = function(contents : string | Buffer) {
-  const options : IOptions = getOptions(this)
+  const options : IOptions = getOptions(this) || {}
 
   if(typeof contents !== 'string') {
     contents = contents.toString()
