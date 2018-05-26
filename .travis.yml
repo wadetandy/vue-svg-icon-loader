@@ -1,9 +1,19 @@
 dist: trusty
 language: node_js
 node_js:
-  - "6"
-  - "8"
-sudo: required
-install:
-  - yarn install
+- lts/*
+- node
+
+before_deploy:
   - yarn build
+
+deploy:
+  provider: npm
+  email: $NPM_EMAIL
+  api_key: $NPM_API_KEY
+  skip_cleanup: true
+  on:
+    tags: true
+    node: node # Only publish with latest node version
+    repo: wadetandy/vue-svg-icon-loader
+
